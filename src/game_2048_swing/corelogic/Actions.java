@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  *
@@ -151,7 +152,7 @@ public class Actions extends Logic{
     private List<Integer> mergeSequence(List<Integer> values){
         for(int iter = 0; iter < values.size();++iter)
         {
-            if(iter +1 < values.size() && values.get(iter) == values.get(iter+1))
+            if((iter +1 < values.size()) && (Objects.equals(values.get(iter), values.get(iter+1))))
             {
                 values.set(iter,values.get(iter) * 2);
                 values.remove(iter+1);

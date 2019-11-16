@@ -19,9 +19,12 @@ public class Configuration extends javax.swing.JFrame {
      */
     public Configuration() {
         initComponents();
+        
+        
+        
         this.getContentPane().setBackground(Color.WHITE);
         
-    this.setLocation((DimensionConstants.SCREEN_SIZE.width - this.getSize().width)/2,
+        this.setLocation((DimensionConstants.SCREEN_SIZE.width - this.getSize().width)/2,
                                               (DimensionConstants.SCREEN_SIZE.height - this.getSize().width)/2);
     }
 
