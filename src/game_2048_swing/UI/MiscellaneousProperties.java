@@ -14,5 +14,4 @@ import java.awt.Font;
 public class MiscellaneousProperties {
     public static int GRID_COUNT = 3;
     public static int WINNING_VALUE = 64;
-    public static Font TILE_FONT = new java.awt.Font("Dialog", 1, 25+(5*(GRID_COUNT-4)));
 }

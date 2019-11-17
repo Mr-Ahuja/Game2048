@@ -5,8 +5,10 @@
  */
 package game_2048_swing.UI;
 
+import static game_2048_swing.UI.MiscellaneousProperties.GRID_COUNT;
 import game_2048_swing.corelogic.Actions;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.JLabel;
@@ -24,6 +26,8 @@ public class MainUI extends javax.swing.JFrame {
     /**
      * Creates new form MainUI
      */
+    
+    Font TILE_FONT = new java.awt.Font("Dialog", 1, (25+(5*(8 - GRID_COUNT))));
     ArrayList<JLabel> tiles = new ArrayList<>();
     public JPanel tilePanel = new JPanel();
     int colorWeight = 255/(int)(Math.log(MiscellaneousProperties.WINNING_VALUE)/Math.log(2));
@@ -35,9 +39,13 @@ public class MainUI extends javax.swing.JFrame {
             MiscellaneousProperties.WINNING_VALUE,
             ()->{
                 JOptionPane.showMessageDialog(rootPane,"Kabhi Kabhi Lagta Hai Ki Apunich BHAGWAN Hai.","You Won I Guess ?",JOptionPane.INFORMATION_MESSAGE);
+                new Configuration().setVisible(true);
+                this.setVisible(false);
             },
             ()->{
                 JOptionPane.showMessageDialog(rootPane,"Tum se Na ho Payga","You Lost for Sure !",JOptionPane.ERROR_MESSAGE);
+                new Configuration().setVisible(true);
+                this.setVisible(false);
             });
     
     public MainUI() {
@@ -86,7 +94,7 @@ public class MainUI extends javax.swing.JFrame {
             tileLabel.setSize(DimensionConstants.TILE_PANEL);
             tileLabel.setBackground(ColorConstants.TILE_BACKGROUND);
             tileLabel.setBorder(matteBorder);
-            tileLabel.setFont(MiscellaneousProperties.TILE_FONT);
+            tileLabel.setFont(TILE_FONT);
             tileLabel.setForeground(ColorConstants.TILE_FOREGROUND);
             tileLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
             tileLabel.setOpaque(true);

@@ -52,9 +52,9 @@ public class Logic {
         grid[xCord][yCord] = value;
     }
     
-    //Chances of getting 4 is 1 in 100
+    //Chances of getting 4 is 1 in 10
     private int randomNumber2and4(){
-        if(randomInRange(1, 100) == 1)
+        if(randomInRange(1, 10) == 1)
             return 4;
         return 2;
     }
